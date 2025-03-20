@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= form.title %></title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1><%= form.title %> at <%= form.name %></h1>
+
+    <% if (form.age) { %>
+    <p>Age: <%= form.number %></p>
+    <% } %>
+
+     <% if (form.health goal) { %>
+    <a href="<%= form.health goal %>" target="_blank">Health Goal</a>
+    <% } %>
+    
+    <a href="/users/<%= user._id %>/forms/<%= form._id %>/edit">
+      Edit this application
+    </a>
+    <form
+    action="/users/<%= user._id %>/forms/<%= form._id %>?_method=DELETE"
+    method="POST">
+
+    <button type="submit">Delete this form</button>
+     </form>
+  </body>
+</html>

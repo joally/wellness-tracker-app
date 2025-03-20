@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editing</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit <%= form.title %> at <%= form.name %></h1>
+    <form action="/users/<%= user._id %>/forms/<%=form._id%>?_method=PUT"
+      method="post"
+     ></form>
+    <label for="name">Name:</label>
+    <input value="<%=form.name %>" type="text" name="name" id="name" />
+  
+    <label for="age">Age:</label>
+    <input value="<%=form.age %>" type="number" name="age" id="age" />
+  
+    <label for="health goals">Health Goals:</label>
+    <textarea  name="healthGoals" id="healthGoals">
+    <%form.healthGoals%>
+    </textarea>
+
+     <label for="waterIntake">WaterIntake:</label>
+    <input value="<%= form.waterIntake%>"type="number" name="waterIntake" id="waterIntake" />
+  
+    <label for="activities">Activities:</label>
+    <select id="activities" name="activities">
+      <option value="walking"
+      <%=form.activities === 'walking' ? 'selected' : ''%>>Walking</option>
+      <option value="yoga"
+      <%=form.activities === 'yoga' ? 'selected' : ''%>>Yoga</option>
+      <option value="strengthTraining"
+      <%=form.activities === 'strengthTraining' ? 'selected' : ''%>>strengthTraining/</option>
+      <option value="swimming"
+      <%=form.activities=== 'swimming' ? 'selected' : ''%>>Swimming</option>
+      <option value=" hiking"
+      <%=form.activities === 'hiking' ? 'selected' : ''%>>Hiking</option>
+      <option value="dancing"
+      <%=form.activities === 'dancing' ? 'selected' : ''%>>Dancing</option>
+    </select>
+    <button type="submit">Update Application</button>
+  </form>
+  
+  </body>
+</html>

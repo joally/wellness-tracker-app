@@ -1,0 +1,42 @@
+<!-- views/applications/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wellness Track App</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Add a New Form</h1>
+    <a href="/users/<%=user._id%>/forms/new">Add a Form</a>
+    <!-- views/applications/new.ejs -->
+
+<form action="/users/<%=user._id%>/forms" method="POST">
+    <label for="company">Name:</label>
+    <input type="text" name="company" id="company" />
+  
+    <label for="age">Age:</label>
+    <input type="number" age="number" id="age" />
+  
+    <label for="health goals">Health Goals:</label>
+    <textarea name="health goals" id="heath goals"></textarea>
+  
+    <label for="water intake">Water Intake:</label>
+    <input type="number" name="water intake" id="water intake" />
+  
+    <label for="activities">Activities:</label>
+    <select id="activities" name="activities">
+      <option value="walking">walking</option>
+      <option value="yoga">Yoga</option>
+      <option value="strength training">strength Training</option>
+      <option value="swimming">Swimming</option>
+      <option value="hiking">Hiking</option>
+      <option value="other">Other</option>
+    </select>
+    <button type="submit">Add Form</button>
+  </form>
+  
+  </body>
+</html>
