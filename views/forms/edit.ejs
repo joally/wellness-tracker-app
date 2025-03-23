@@ -3,23 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Editing</title>
-  </head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+     <title>Editing</title>
+    </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Edit <%= form.title %> at <%= form.name %></h1>
-    <form action="/users/<%= user._id %>/forms/<%=form._id%>?_method=PUT"
-      method="post"
-     ></form>
+    <h1>Edit <%= form.name %> at <%= form.age %></h1>
+    <form action="/users/<%= user._id %>/forms/<%= form._id %>?_method=PUT" method="POST">
+     
     <label for="name">Name:</label>
     <input value="<%=form.name %>" type="text" name="name" id="name" />
   
     <label for="age">Age:</label>
     <input value="<%=form.age %>" type="number" name="age" id="age" />
   
-    <label for="health goals">Health Goals:</label>
+    <label for="healthGoals">Health Goals:</label>
     <textarea  name="healthGoals" id="healthGoals">
-    <%form.healthGoals%>
+    <%=form.healthGoals%>
     </textarea>
 
      <label for="waterIntake">WaterIntake:</label>
@@ -32,7 +33,7 @@
       <option value="yoga"
       <%=form.activities === 'yoga' ? 'selected' : ''%>>Yoga</option>
       <option value="strengthTraining"
-      <%=form.activities === 'strengthTraining' ? 'selected' : ''%>>strengthTraining/</option>
+      <%=form.activities === 'strengthTraining' ? 'selected' : ''%>>StrengthTraining/</option>
       <option value="swimming"
       <%=form.activities=== 'swimming' ? 'selected' : ''%>>Swimming</option>
       <option value=" hiking"

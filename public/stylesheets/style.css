@@ -1,0 +1,226 @@
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'poppings', sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: antiquewhite;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   
+    justify-content: center;
+
+}
+.row{
+    display: flex;
+    height: 88%;
+    align-items: center;
+} 
+.col{
+    flex-basis: 50%;
+}
+  
+  .navbar{
+    width: 100%;
+    overflow: auto;
+    background-color: rgb(217, 123, 79);
+  }
+  .navbar ul{
+    padding: 0;
+    margin: 0 0 0 250px;
+    list-style: none;
+    overflow: hidden;
+  }
+
+
+   
+ .navbar a{
+ width: 100px;
+display: flex;
+ padding:  15px;
+ text-decoration: none;
+font-family: Arial, Helvetica, sans-serif;
+ color: white; 
+text-align: center;
+ 
+ } 
+ li a:hover{
+    background-color: chocolate;
+    text-transform: uppercase;
+    color: bisque;
+
+
+ }
+.navbar li{
+    float: left;
+}
+
+h1{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 35px;
+    padding-top: 25px;
+  } 
+  p{
+ text-align: center;
+ font-family: sans-serif;
+ font-style: italic;
+  }
+
+
+
+footer{
+    margin-top: 100px;
+    background-color: #000;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width:100% ;
+    text-align: center;
+    
+}
+.footer_title{
+    padding:30px;
+    color:white;
+}
+.page2{
+    background-color: rgb(48, 68, 217);
+    font-family: sans-serif;
+
+}
+.signup-box{
+    width: 360px;
+    height: 450px;
+    margin: auto;
+    background-color:whitesmoke;
+    border-radius: 5px;
+}
+.signin-box{
+        width: 360;
+        height: 280;
+        margin: auto;
+        border-radius: 3px;
+        background-color:whitesmoke ;
+
+}
+h1.page2{
+    text-align: center;
+    font-size:18 px;
+    padding-top: 30px;
+   justify-content: center;
+   
+
+}
+form{
+    width: 300px;
+    margin-left: 20px;
+
+}
+form label{
+    display: flex;
+    margin-top: 35px;
+    font-size: 18px;
+}
+form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid grey;
+    border-radius: 6px;
+    outline: none;
+
+}
+.custom-button{
+    width: 320px;
+    height: 35px;
+    margin-top: 30px;
+    border:none;
+    background-color: #49c1a2;
+    color:white;
+    font-size: 18px;
+}
+p.page2{
+    text-align:center ;
+    padding-top: 30px;
+    font-size: 20px;
+    color: beige;
+
+    body{
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+}
+.submission-form{
+    width: 400px;
+    height: 600px;
+    margin: auto;
+    background-color:whitesmoke;
+    border-radius: 5px;
+}
+h1{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 35px;
+}
+.container{
+    max-width: 700px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 8px;
+
+}
+    
+section{
+    width: 80%;
+    margin: auto;
+
+}
+h2{
+    color: #49c1a2;
+    font-size: 3vmin;
+    margin: 20px auto;
+}
+p{
+    color: #000;
+    font-size: 18px;
+    line-height: 15;
+    line-height: 15px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}   
+
+
+.row.col img{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.events.row{
+    margin-top: 50px;
+
+} 
+h4{
+    font-size: 3vmin;
+    color: grey;
+    margin: 20px auto;
+} 
+p{
+    color: #000;
+    padding: opx 40px;
+}
+
+

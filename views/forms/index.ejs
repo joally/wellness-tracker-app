@@ -1,21 +1,28 @@
-<!-- views/applications/index.ejs -->
+
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Wellness Tracker App</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Your Forms</title>
   </head>
   <body>
-    <%- include('./partials/_navbar.ejs') %>
-    <h1>Wellness Tracker App</h1>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Your Forms</h1>
+    <a href="/users/<%=user._id%>/forms/new">Add a Form</a>
+    
     <ul>
-      <% forms.forEach(form) => { %>
-        <li>
-          <a href="/users/<%=usser._id%>/forrms/<%=form._id %>" ></a>
-      </li>
-   <% }; %>
+    <% forms.forEach(form=>{ %>
+
+            <li>
+               <a href="/users/<%= user._id %>/forms/<%= form._id %>">
+                      <%= form.name %> at <%= form.age %>
+                </a>
+          </li>
+            <% }) %>
+
     </ul>
   </body>
 </html>

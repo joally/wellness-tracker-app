@@ -9,24 +9,24 @@ const formsSchema = new mongoose.Schema({
   },
   age: {
     type: Number,
-    required: true,
+   
   },
   healthGoals: {
     type: String,
-    required: true,
+   
   },
   waterIntake: {
     type: Number,
-    required: true,
+   
   },
   activities: { 
     type: String,
-    enum: ['Walking',
-      'Yoga',
-      'Strength Training',
-      'Swimming',
-      'Hiking',
-      'Dancing'
+    enum: ['walking',
+      'yoga',
+      'strengthTraining',
+      'swimming',
+      'hiking',
+      'dancing'
       
     ],
   },
@@ -43,7 +43,7 @@ username: {
   },
   email: {
     type: String,
-    required: true,
+   
   },
    forms: [formsSchema]
 });

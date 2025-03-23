@@ -3,18 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= form.title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title><%= form.name%></title>
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1><%= form.title %> at <%= form.name %></h1>
+    <h1><%= form.name %> at <%= form.age %></h1>
 
-    <% if (form.age) { %>
-    <p>Age: <%= form.number %></p>
+    <% if (form.waterIntake) { %>
+    <p>Water Intake: <%= form.waterIntake %></p>
     <% } %>
 
-     <% if (form.health goal) { %>
-    <a href="<%= form.health goal %>" target="_blank">Health Goal</a>
+     <% if (form.healthGoals) { %>
+    <a href="<%= form.heathGoals %>" target="_blank">Health Goals</a>
     <% } %>
     
     <a href="/users/<%= user._id %>/forms/<%= form._id %>/edit">

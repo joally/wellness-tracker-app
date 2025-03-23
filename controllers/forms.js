@@ -1,13 +1,16 @@
+const express = require('express');
 const router = express.Router();
 
-const User = require('../models/user.js');
+const User = require('../models/form.js');
+const mongoose = require('mongoose');
 
 router.get('/', async(req, res) => {
-    try {
+  try {
       const currentUser = await User.findById(req.session.user._id);
+      
         res.render('forms/index.ejs', {
           forms: currentUser.forms,
-          });
+         });
          
         }catch (error) {
         console.log(error);
@@ -42,11 +45,12 @@ router.post('/', async (req, res) => {
 
 
 router.get('/:formsId', async (req, res) => {
+  
   try {
     const currentUser = await User.findById(req.session.user._id);
-    const form = currentUser.forms.id(req.params.formId);
+    const form = currentUser.forms.id(req.params.formsId);
    res.render('forms/show.ejs', {
-        form:form,
+        form:form
    });
   } catch (error) {
         console.log(error);
@@ -67,7 +71,7 @@ router.delete('/:formId', async (req, res) => {
     console.log(error);
     res.redirect('/');
   }
-}),
+});
 
 
 
@@ -75,7 +79,7 @@ router.delete('/:formId', async (req, res) => {
 router.get('/:formId/edit', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
-    const form = currentUser.forms.id(req.params.formsId);
+    const form = currentUser.forms.id(req.params.formId);
     res.render('forms/edit.ejs', {
     form:form
     });
@@ -94,15 +98,14 @@ router.put('/:formId', async (req, res) => {
   
     const currentUser = await User.findById(req.session.user._id);
    
-    const form = currentUserforms.id(req.params.formId);
+    const form = currentUser.forms.id(req.params.formId);
+  
    form.set(req.body);
   
     await currentUser.save();
   
-    res.redirect(
-      `/users/${currentUser._id}/${req.params.formId}`
-    );
-  } catch (error) {
+    res.redirect(`/users/${currentUser._id}/forms/${req.params.formId}`)
+    } catch (error) {
     console.log(error);
     res.redirect('/');
   }
@@ -112,4 +115,6 @@ router.put('/:formId', async (req, res) => {
   
 
   
+
+
 module.exports = router;

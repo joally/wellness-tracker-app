@@ -2,10 +2,11 @@ const dotenv = require('dotenv');
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const path = require("path");
 const session =require('express-session');
 const authController = require('./controllers/auth.js')
 const methodOverride = require('method-override');
-//const formsController= require('./controllers/');
+const formsController= require('./controllers/forms');
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 
@@ -20,10 +21,11 @@ mongoose.connection.on('connected',() => {
 });
 const Form = require('./models/form.js');
 
-
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
-
+app.use(express.static(path.join(__dirname, "public")));
+app.use(morgan('dev'));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -34,16 +36,23 @@ app.use(
 
 app.use(passUserToView);
 
+app.use('/users/:userId/forms',formsController);
+
+
 app.get('/', (req, res) => {
-    if(req.session.user){
-        res.redirect(`users/${req.session.user._id}forms`)
-    }else {
-        res.render('index.ejs');
-    }
-  });
+  if(req.session.user){
+      res.redirect(`users/${req.session.user._id}/forms`);
+  }else {
+      res.render('index.ejs');
+  }
+});
 
 app.use('/auth', authController);
 app.use(isSignedIn);
+
+
+
+
  
 
 

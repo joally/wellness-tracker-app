@@ -1,42 +1,43 @@
-<!-- views/applications/new.ejs -->
+
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wellness Track App</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Add a New Form</title>
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Add a New Form</h1>
-    <a href="/users/<%=user._id%>/forms/new">Add a Form</a>
-    <!-- views/applications/new.ejs -->
-
-<form action="/users/<%=user._id%>/forms" method="POST">
-    <label for="company">Name:</label>
-    <input type="text" name="company" id="company" />
+   
+    <h1 class="page4">Add a New Form</h1>
+   <form  action="/users/<%= user._id%>/forms" method="POST">
+<section class = "container">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" />
   
     <label for="age">Age:</label>
-    <input type="number" age="number" id="age" />
+    <input type="number" name="age" id="age" />
   
-    <label for="health goals">Health Goals:</label>
-    <textarea name="health goals" id="heath goals"></textarea>
+    <label for="healthGoals">Health Goals:</label>
+    <textarea name="healthGoals" id="heathGoals"></textarea>
   
-    <label for="water intake">Water Intake:</label>
-    <input type="number" name="water intake" id="water intake" />
-  
+    <label for="waterIntake">Water Intake:</label>
+    <input type="number" name="waterIntake" id="waterIntake" />
+ 
     <label for="activities">Activities:</label>
     <select id="activities" name="activities">
-      <option value="walking">walking</option>
+
+      <option value="walking">Walking</option>
       <option value="yoga">Yoga</option>
-      <option value="strength training">strength Training</option>
+      <option value="strengthTraining">Strength Training</option>
       <option value="swimming">Swimming</option>
       <option value="hiking">Hiking</option>
-      <option value="other">Other</option>
+      <option value="dancing">Dancing</option>
     </select>
-    <button type="submit">Add Form</button>
+    <button class="custom-button" type="submit">Add a Form</button>
   </form>
-  
+</section>
   </body>
 </html>
