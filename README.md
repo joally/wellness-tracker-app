@@ -15,6 +15,8 @@ Can provide numerous benefits in order to improve your health, productivity, and
 
 Project planning link:https://trello.com/invite/b/67d49ffee85fdd4809128063/ATTI23646ac616940579e6958091d82abb27C165106D/wellness-tracker
 
+GitHub repo link:https://github.com/joally/wellness-tracker-app.git
+
 ## Attributions:
 
 1. [Trello](https://trello.com)
